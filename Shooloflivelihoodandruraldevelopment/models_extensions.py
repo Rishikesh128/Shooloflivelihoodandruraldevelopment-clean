@@ -10,7 +10,7 @@ class Outcome(db.Model):
     deadline = db.Column(db.Date)  # Deadline for the outcome
     task_id = db.Column(db.Integer, db.ForeignKey('task.id'), nullable=False)
     created_by_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    completed_by_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=True)
+    completed_by_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=True)
     completed_at = db.Column(db.DateTime)
     created_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
     
